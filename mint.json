@@ -41,7 +41,7 @@
       {
         "group": "Showcase",
         "pages": [
-            "index",
+            "introduction",
             "apps",
             "custom-code-quickstart",
             "databases",
