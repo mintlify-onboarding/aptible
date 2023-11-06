@@ -1,0 +1,78 @@
+---
+title: Deploy your custom code
+description: "Learn how to deploy your custom code on Aptible"
+---
+
+# Overview
+
+The following guide is designed to help you deploy custom code on Aptible.
+
+During this process, Aptible will launch containers to run your custom app and Managed Databases for any data stores, like PostgreSQL, Redis, etc., that your app requires to run.
+
+## Compatibility
+
+Aptible supports many frameworks; you can deploy any code that meets the following requirements:
+
+* Apps must run on Linux in Docker containers
+  * To run an app on Aptible, you must provide Aptible with a Dockerfile. To that extent, all apps on Aptible must be able to run Linux in Docker containers.
+
+<Note> 📘 New to Docker? [Check out Docker’s getting started guide](https://docs.docker.com/get-started/).</Note>
+
+* Apps may only receive traffic over HTTP or TCP.
+  * App endpoints (load balancers) are how you expose your Aptible app to the Internet. These endpoints only support traffic received over HTTP or TCP. While you cannot serve UDP services from Aptible, you may still connect to UDP services (such as DNS, SNMP, etc.) from apps hosted on Aptible.
+* Apps must not depend on persistent storage.
+  * App containers on Aptible are ephemeral and cannot be used for data persistence. To store your data with persistence, we recommend using a [Database](http://aptible.com/docs/databases) or third-party storage solution, such as AWS S3. Apps that rely on persistent local storage or a volume shared between multiple containers must be re-architected to run on Aptible. If you have questions about doing so, contact [Aptible Support](https://www.aptible.com/docs/support) for assistance.
+
+## Deploy Code
+
+<Warning> Prerequisites: Ensure you have [Git](https://git-scm.com/downloads) installed, a Git repository with your application code, and a [Dockerfile](https://www.aptible.com/docs/dockerfile) ready to deploy.</Warning>
+
+Using the Deploy Code tool in the Aptible Dashboard, you can deploy Custom Code. The tool will guide you through the following:
+
+#### Step 01: Deploy with Git push
+
+![](/images/1.png)
+
+#### Step 02: Add an SSH keys
+
+![](/images/2.png)
+
+If you have not done so already, you will be prompted to set up an [SSH key](https://www.aptible.com/docs/public-key-authentication#ssh-keys).
+
+#### Step 03: Environment Setup
+
+![](/images/3.png)
+
+Select your [stack](https://www.aptible.com/docs/stacks) to deploy your resources. This will determine what region your resources are deployed to. Then, name the [environment](https://www.aptible.com/docs/environments) your resources will be grouped into.
+
+#### **Step 04: Push your code to aptible**
+
+![](/images/4.png)
+
+Select **Custom Code** deployment, and from your command-line interface, add Aptible’s Git Server and push your code to our scan branch using the commands in the Aptible Dashboard
+
+#### Step 05: Provision a database and configure your app 
+
+![](/images/5.png)
+
+Optionally, provision a database, configure your app with [environment variables](docs/configuration#configuration-variables), or add additional [services](/docs/services) and commands.
+
+#### Step 06: Deploy your code and view logs
+
+![](/images/6.png)
+
+Deploy your code and view [logs](/docs/logs) in real time
+
+#### **Step 07: Expose your app to the internet**
+
+![](/images/7.png)
+
+Now that your code is deployed, it's time to expose your app to the internet. Select the service that needs an [endpoint](https://www.aptible.com/docs/endpoints), and Aptible will automatically provision a managed endpoint.
+
+# Next steps
+
+Continue your journey on Aptible:
+
+* Learn more about [how Aptible helps engineering teams](/docs/introduction-to-aptible)
+* Explore the [Security & Compliance Dashboard](https://dashboard.aptible.com/controls)
+* Install and try the [Aptible CLI](/docs/cli)

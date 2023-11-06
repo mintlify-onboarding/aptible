@@ -1,0 +1,57 @@
+{
+    "name": "Aptible",
+    "logo": {
+      "light": "/logo/light.png",
+      "dark": "/logo/dark.png"
+    },
+    "favicon": "/favicon.svg",
+    "colors": {
+      "primary": "#98256A",
+      "light": "#A8397C",
+      "dark": "#98256A"
+    },
+    "topbarCtaButton": {
+      "name": "Sign up",
+      "url": "https://app.aptible.com/signup"
+    },
+    "topbarLinks": [
+      {
+        "name": "Log in",
+        "url": "https://app.aptible.com/login"
+      }
+    ],
+    "anchors": [
+      {
+        "name": "Support",
+        "icon": "headset",
+        "url": "https://aptible.zendesk.com/hc/en-us/requests/new"
+      },
+      {
+        "name": "Security & Compliance",
+        "icon": "lock",
+        "url": "https://www.aptible.com/security-compliance"
+      },
+      {
+        "name": "Blog",
+        "icon": "newspaper",
+        "url": "https://www.aptible.com/blog"
+      }
+    ],
+    "navigation": [
+      {
+        "group": "Showcase",
+        "pages": [
+            "index",
+            "apps",
+            "custom-code-quickstart",
+            "databases",
+            "integrations"
+        ]
+      }
+    ],
+    "footerSocials":
+      {
+          "twitter": "https://twitter.com/aptible?lang=en",
+          "linkedin": "https://www.linkedin.com/company/aptible/"
+      }
+  }
